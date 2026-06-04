@@ -1,4 +1,4 @@
-def Speler
+def Speler(): 
   lucifers = random(25) + 20
 
 while lucifers > 0:
@@ -8,9 +8,9 @@ while lucifers > 0:
     print("Je hebt" pakken "lucifers gepakt")
   lucifers = lucifers - pakken
     print("Er zijn nog" lucifers "lucifers over")
-    beurt = computer
+    beurt = computer()
 
-def computer
+def computer():
   print("Er zijn nog" lucifers "lucifers over")
   pakken = random(3) + 1
   print("De computer heeft" pakken "lucifers gepakt")
@@ -19,4 +19,4 @@ def computer
   if lucifers <= 0:
     print("De Speler heeft gewonnen")
   else : 
-     beurt = Speler
+     beurt = Speler()
