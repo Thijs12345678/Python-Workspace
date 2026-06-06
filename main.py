@@ -4,19 +4,20 @@ lucifers = random.randint(20, 25)
 
 def Speler():
     global lucifers
-    print("Er zijn nog", lucifers, "lucifers over")
-    pakken = int(input("Hoeveel lucifers wil je pakken? "))
-    if pakken > 0 and pakken <= 3:
-        print("Je hebt", pakken, "lucifers gepakt")
-        lucifers = lucifers - pakken
+    while lucifers > 0:
         print("Er zijn nog", lucifers, "lucifers over")
-        if lucifers <= 0:
-            print("Jij pakte de laatste lucifer. Jij verliest!")
+        pakken = int(input("Hoeveel lucifers wil je pakken? "))
+        if pakken > 0 and pakken <= 3:
+            print("Je hebt", pakken, "lucifers gepakt")
+            lucifers = lucifers - pakken
+            print("Er zijn nog", lucifers, "lucifers over")
+            if lucifers <= 0:
+                print("Jij pakte de laatste lucifer. Jij verliest!")
+            else:
+                computer()
+            return
         else:
-            computer()
-    else:
-        print("Kies 1, 2 of 3!")
-        Speler()
+            print("Kies 1, 2 of 3!")
 
 def computer():
     global lucifers
@@ -29,7 +30,7 @@ def computer():
         pakken = 2
     elif lucifers == 2:
         pakken = 1
-    else:
+    elif lucifers == 1:
         pakken = 1
     print("De computer heeft", pakken, "lucifers gepakt")
     lucifers = lucifers - pakken
