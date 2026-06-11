@@ -1,7 +1,7 @@
 import random
 
 lucifers = random.randint(20, 25)
-print("Er zijn nog", lucifers, "lucifers over")
+print("Er zijn nog", lucifers, "lucifer" if lucifers == 1 else "lucifers", "over")
 
 while lucifers > 0:
     # Speler beurt
@@ -12,7 +12,7 @@ while lucifers > 0:
         else:
             print("Je hebt", pakken, "lucifers gepakt")
         lucifers = lucifers - pakken
-        print("Er zijn nog", lucifers, "lucifers over")
+        print("Er zijn nog", lucifers, "lucifer" if lucifers == 1 else "lucifers", "over")
         if lucifers <= 0:
             print("Jij pakte de laatste lucifer. Jij verliest!")
             break
@@ -32,10 +32,9 @@ while lucifers > 0:
         pakken = 1
     elif lucifers == 1:
         pakken = 1
-        print("De computer heeft 1 lucifer gepakt")
-    print("De computer heeft", pakken, "lucifers gepakt")
+    print("De computer heeft", pakken, "lucifer" if pakken == 1 else "lucifers", "gepakt")
     lucifers = lucifers - pakken
-    print("Er zijn nog", lucifers, "lucifers over")
+    print("Er zijn nog", lucifers, "lucifer" if lucifers == 1 else "lucifers", "over")
     if lucifers == 0:
         print("De Speler heeft gewonnen")
         break
